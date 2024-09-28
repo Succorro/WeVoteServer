@@ -2457,8 +2457,6 @@ def voter_guide_search_view(request):
     """
     form_view = request.GET.get('form_view', 'search')
 
-    form_view = request.GET.get('form_view', 'search')
-
     # admin, analytics_admin, partner_organization, political_data_manager, political_data_viewer, verified_volunteer
     authority_required = {'political_data_viewer', 'verified_volunteer'}
     if not voter_has_authority(request, authority_required):
