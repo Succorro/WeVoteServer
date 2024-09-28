@@ -37,7 +37,7 @@
                 <tr>
                     <th>Website:</th>
                     <td>
-                        {{ organization.organization_website }}
+                        {{ organization.organization_website|default_if_none:"" }}
                         {% if organization.organization_website %}
                         <a href="{{ organization.organization_website }}"
                            target="_blank"
