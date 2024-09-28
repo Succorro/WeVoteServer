@@ -48,6 +48,7 @@
         </div>
     </div>
 
+
 <!-- <div class="form-group">
     <label for="organization_website_id" class="col-sm-3 control-label">Endorser Website</label>
     <div class="col-sm-8">
@@ -132,10 +133,9 @@
     </div>
     {% endif %}
 </form>
-
-{% if search_performed %}
-    <div id="search-div">
+<div {% if form_view == 'create' %} style="display: none;" {% endif %}>
     {% if organizations_list %}
+        <div style="padding: 15px 0">
             <table>
                 <tr>
                     <td></td>
@@ -162,6 +162,5 @@
         </div>
         <p></p>
     {% endif %}
-    </div>
-{% endif %}
+</div>
 {% endblock %}

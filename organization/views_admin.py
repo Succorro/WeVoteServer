@@ -1403,8 +1403,6 @@ def organization_edit_process_view(request):
     if google_civic_election_id is not False:
         url_variables += "&google_civic_election_id=" + str(google_civic_election_id)
     
-
-    
     if not success:
         messages.add_message(request, messages.ERROR,
                              'ORGANIZATION_ERROR Please click the back arrow and send URL to the engineering team: '

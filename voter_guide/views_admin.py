@@ -2457,6 +2457,8 @@ def voter_guide_search_view(request):
     """
     form_view = request.GET.get('form_view', 'search')
 
+    form_view = request.GET.get('form_view', 'search')
+
     # admin, analytics_admin, partner_organization, political_data_manager, political_data_viewer, verified_volunteer
     authority_required = {'political_data_viewer', 'verified_volunteer'}
     if not voter_has_authority(request, authority_required):
@@ -2556,10 +2558,10 @@ def voter_guide_search_process_view(request):
         organizations_count = len(organizations_list)
 
         messages.add_message(request, messages.INFO, 'We found {count} existing organization(s) '
-                                                    'that might match.'.format(count=organizations_count))
+                                                'that might match.'.format(count=organizations_count))
     else:
         organizations_list = []
-        messages.add_message(request, messages.INFO, 'No endorser found with those search terms. '
+    messages.add_message(request, messages.INFO, 'No endorser found with those search terms. '
                                                     'Please try again. ')
 
     election_manager = ElectionManager()
